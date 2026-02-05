@@ -33,11 +33,11 @@ const NayahaCorporate = () => {
     setActiveModal('news');
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    showToast("Message routed to department.");
-    (e.target as HTMLFormElement).reset();
-  };
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   showToast("Message routed to department.");
+  //   (e.target as HTMLFormElement).reset();
+  // };
 
   const handleVulnReport = (e: React.FormEvent) => {
     e.preventDefault();
@@ -251,6 +251,116 @@ const NayahaCorporate = () => {
             transition: all 0.3s; z-index: 3000; pointer-events: none;
         }
         .toast.visible { opacity: 1; transform: translateY(0); }
+
+
+        .corporate-wrapper {
+  padding: 60px 20px;
+  background: #fafafa;
+}
+
+.corporate-card {
+  max-width: 1100px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 70px 60px;
+  box-shadow: 0 0 0 1px #eee;
+  text-align: center;
+}
+
+.accent {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #c9a24d;
+  margin-bottom: 12px;
+}
+
+.heading {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.subheading {
+  font-size: 16px;
+  color: #666;
+  max-width: 620px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.info-card {
+  border: 1px solid #eaeaea;
+  border-radius: 14px;
+  padding: 34px 28px;
+  background: #fff;
+}
+
+.info-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.email {
+  color: #c9a24d;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.divider {
+  height: 1px;
+  background: #eaeaea;
+  margin: 60px 0 40px;
+}
+
+.office {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.8;
+}
+
+.office strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.note {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #777;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .corporate-card {
+    padding: 50px 24px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .heading {
+    font-size: 34px;
+  }
+}
+
       `}</style>
 
       {/* --- HEADER --- */}
@@ -305,7 +415,7 @@ const NayahaCorporate = () => {
               <div className="hero-card">
                 <span className="accent-text">Corporate Holding</span>
                 <h1>NAYAHA INDIA TECHNO PVT LTD</h1>
-                <p className="hero-text">Building trust-first technology platforms. The corporate backbone for scalable, compliant brands.</p>
+                <p className="hero-text">A privately incorporated Indian technology holding company. Building responsible, secure, and compliance-first technology platforms.</p>
                 <div style={{ display: 'flex', gap: 16, justifyContent: 'center' }}>
                   <button className="btn btn-primary" onClick={() => handleNav('brands')}>View Portfolio</button>
                   <button className="btn btn-outline" onClick={() => handleNav('governance')}>Governance Profile</button>
@@ -333,7 +443,7 @@ const NayahaCorporate = () => {
               <div style={{ background: '#fff', padding: 40, borderRadius: 8, border: '1px solid #E5E5E5', textAlign: 'center' }}>
                 <span className="accent-text">Strategic Focus</span>
                 <h3 style={{ marginBottom: 24, fontSize: 24 }}>Trust & Accountability</h3>
-                <p className="hero-text" style={{ marginBottom: 24 }}>We maintain strict adherence to regulatory frameworks, ensuring longevity for our stakeholders.</p>
+                <p className="hero-text" style={{ marginBottom: 24 }}>We align policies and processes with applicable regulations (readiness in progress).</p>
                 <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
                   {['Transparent Operations', 'Regularly Audited', 'Secure Infrastructure'].map(t => (
                     <span key={t} className="status-badge status-active" style={{ padding: '8px 16px', fontSize: 13 }}>{t}</span>
@@ -349,22 +459,24 @@ const NayahaCorporate = () => {
           <section>
             <div className="container" style={{ maxWidth: 900 }}>
               <span className="accent-text">Who We Are</span>
-              <h1>The Corporate Backbone</h1>
-              <p className="hero-text" style={{ textAlign: 'left', margin: '0 0 40px 0' }}>Nayaha India Techno Pvt Ltd exists to provide the legal, technological, and compliance infrastructure required to build consumer-facing brands that last.</p>
+              <h1>Corporate Overview</h1>
+              <p className="hero-text" style={{ textAlign: 'left', margin: '0 0 40px 0' }}>Nayaha India Techno Pvt Ltd is a private limited company incorporated in India in 2021. The company operates as a parent technology holding entity focused on building responsible, compliance-ready digital platforms and infrastructure-led systems.
+
+The company is incorporated under the Companies Act, 2013 and registered in the state of Madhya Pradesh, India. Nayaha functions as a holding and operating entity for early-stage digital platforms currently under development. The company does not offer direct consumer products or services through this website.</p>
               
-              <h3 style={{ marginTop: 40, marginBottom: 20 }}>Operating Principles</h3>
+              <h3 style={{ marginTop: 40, marginBottom: 20 }}>Mission & Vision</h3>
               <div className="grid-3">
                 <div className="detail-card">
-                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: 12 }}>Integrity First</h4>
-                  <p style={{ fontSize: 14, color: '#666' }}>We prioritize long-term reputation over short-term gains.</p>
+                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: 12 }}>Mission</h4>
+                  <p style={{ fontSize: 14, color: '#666' }}>To build responsible, secure, and compliance-first technology platforms that adhere to the highest standards of digital integrity.</p>
                 </div>
                 <div className="detail-card">
-                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: 12 }}>Compliance By Design</h4>
-                  <p style={{ fontSize: 14, color: '#666' }}>We design products with regulatory guardrails from code one.</p>
+                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: 12 }}>Vision</h4>
+                  <p style={{ fontSize: 14, color: '#666' }}>To become a trusted Indian technology holding company supporting scalable digital systems and infrastructure.</p>
                 </div>
                 <div className="detail-card">
-                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: 12 }}>Scalable Tech</h4>
-                  <p style={{ fontSize: 14, color: '#666' }}>Unified technology stacks powering multiple verticals.</p>
+                  <h4 style={{ color: 'var(--accent-gold)', marginBottom: 12 }}>Data Protection</h4>
+                  <p style={{ fontSize: 14, color: '#666' }}>We process personal data in accordance with the Digital Personal Data Protection Act, 2023 (DPDP Act).</p>
                 </div>
               </div>
             </div>
@@ -375,7 +487,7 @@ const NayahaCorporate = () => {
         {currentSection === 'brands' && (
           <section>
             <div className="container">
-              <span className="accent-text">Portfolio</span>
+              <span className="accent-text">Intellectual Property</span>
               <h1>Our Brands</h1>
               <p className="hero-text" style={{ margin: '0 0 40px 0', textAlign: 'left' }}>Nayaha incubates and manages brands that solve core efficiency problems.</p>
 
@@ -386,7 +498,7 @@ const NayahaCorporate = () => {
                   <button className="btn btn-gold">Visit Brand Website <ExternalLink size={14} style={{marginLeft:8}} /></button>
                 </div>
                 <div className="brand-tagline" style={{fontSize: 18, opacity: 0.9, marginBottom: 24, fontWeight: 300}}>Responsibility & Trust Ledger Ecosystem</div>
-                <p style={{ fontSize: 16, color: '#ddd', marginBottom: 20, maxWidth: 600, lineHeight: 1.6 }}>Duezaro operates as a distinct brand entity, utilizing Nayaha's centralized payment and legal infrastructure. It simplifies financial responsibility tracking for modern teams.</p>
+                <p style={{ fontSize: 16, color: '#ddd', marginBottom: 20, maxWidth: 600, lineHeight: 1.6 }}>Duezaro is an emerging digital platform developed under Nayaha India Techno Pvt Ltd. The platform is currently under development and its public operations are not yet active.</p>
                 <div className="brand-meta" style={{marginTop: 'auto', borderTop: '1px solid #444', paddingTop: 20, width: '100%', display: 'flex', justifyContent: 'space-between'}}>
                   <span>Operated by Nayaha India Techno Pvt Ltd</span>
                   <span className="status-badge status-active">Active Brand</span>
@@ -416,9 +528,9 @@ const NayahaCorporate = () => {
                   <div className="detail-card" style={{ padding: '0 24px' }}>
                     {[
                       { l: 'Legal Name', v: 'NAYAHA INDIA TECHNO PVT LTD' },
-                      { l: 'CIN', v: 'U72900KA202XPTCXXXXXX' },
-                      { l: 'Incorporation', v: '202X' },
-                      { l: 'Registered State', v: 'Karnataka, India' },
+                      { l: 'CIN', v: 'Companies Act, 2013' },
+                      { l: 'Incorporation', v: '2021' },
+                      { l: 'Registered State', v: 'Madhya Pradesh, India' },
                       { l: 'Classification', v: 'Private Limited Company' }
                     ].map((row, i) => (
                       <div key={i} className="detail-row" style={i === 4 ? { borderBottom: 'none' } : {}}>
@@ -434,7 +546,7 @@ const NayahaCorporate = () => {
 
                 <div>
                   <h3 style={{ marginBottom: 16 }}>Leadership</h3>
-                  {['Director Name - Managing Director', 'Director Name - Executive Director'].map((d, i) => (
+                  {['Gourav Sharma  - Founder & Director', 'Ishan Derashri - Co-Founder & Director-Founder'].map((d, i) => (
                     <div key={i} className="detail-card" style={{ marginBottom: 16 }}>
                       <div style={{ fontWeight: 600, fontSize: 16 }}>{d.split('-')[0]}</div>
                       <div style={{ fontSize: 12, color: '#666' }}>{d.split('-')[1]}</div>
@@ -453,14 +565,14 @@ const NayahaCorporate = () => {
               <div style={{ textAlign: 'center', marginBottom: 40 }}>
                 <span className="accent-text">Adherence</span>
                 <h1>Regulatory Status</h1>
-                <p>We maintain active compliance with Indian digital regulations.</p>
+                <p>We align policies and processes with applicable regulations (readiness in progress).</p>
               </div>
 
               {[
-                { id: 'trai', title: 'TRAI DLT Readiness', status: 'Active', badge: 'status-active', content: 'Entity ID: 1001XXXXXXXX. All headers and templates approved via registered telemarketers.' },
-                { id: 'dpdp', title: 'DPDP Act Alignment', status: 'In Progress', badge: 'status-progress', content: 'We are currently auditing all data collection points across Duezaro and internal tools. A Consent Manager architecture is being deployed.' },
-                { id: 'bank', title: 'Banking & Payments', status: 'Verified', badge: 'status-active', content: 'Partners: Razorpay / Cashfree. Corporate KYC Completed. All sensitive payment data is tokenized.' },
-                { id: 'app', title: 'App Store Verification', status: 'Verified', badge: 'status-active', content: 'D-U-N-S Number Available. Organization verification completed for Google Play Console and Apple App Store.' }
+                { id: 'trai', title: 'TRAI DLT Readiness', status: 'Active', badge: 'status-active', content: 'Purpose: Transactional SMS & sender ID verification to prevent fraud.Status: We are currently ensuring all headers and templates are registered via approved telemarketers. The system is designed to maintain zero-spam policy compliance through rigorous internal logging.Entity registration is active; template scrubbing is ongoing.' },
+                { id: 'dpdp', title: 'DPDP Act Alignment', status: 'In Progress', badge: 'status-progress', content: 'Purpose: Compliance with the Digital Personal Data Protection Act, 2023 (DPDP Act).Our team is conducting a data map assessment of all collection points. A Consent Manager architecture is being designed to allow users granular control over their data usage.Policy formulation stage; technical implementation pending.' },
+                { id: 'bank', title: 'Banking & Payments', status: 'Verified', badge: 'status-active', content: 'Partners: Major Payment Aggregators (Integration Phase)KYC Status: Corporate KYC Completed.We are implementing tokenized payment flows where no sensitive card details are stored on our servers. Reconciliation processes arebeing tested to ensure financial transparency.Sandbox testing active; production access restricted.' },
+                { id: 'app', title: 'App Store Verification', status: 'Verified', badge: 'status-active', content: 'Partners: Major Payment Aggregators (Integration Phase)KYC Status: Corporate KYC Completed.We are implementing tokenized payment flows where no sensitive card details are stored on our servers. Reconciliation processes arebeing tested to ensure financial transparency.Sandbox testing active; production access restricted.' }
               ].map((item) => (
                 <div key={item.id} className="accordion-item">
                   <div className="accordion-header" onClick={() => toggleAccordion(item.id)}>
@@ -578,47 +690,94 @@ const NayahaCorporate = () => {
 
         {/* --- CONTACT SECTION --- */}
         {currentSection === 'contact' && (
-          <section>
-            <div className="container">
-              <div className="form-container">
-                <span className="accent-text">Get in touch</span>
-                <h1 style={{ marginBottom: 16 }}>Corporate Contact</h1>
-                <p style={{ color: '#666', marginBottom: 32 }}>For legal, partnership, or general inquiries.</p>
+          // <section>
+          //   <div className="container">
+          //     <div className="form-container">
+          //       <span className="accent-text">Get in touch</span>
+          //       <h1 style={{ marginBottom: 16 }}>Corporate Contact</h1>
+          //       <p style={{ color: '#666', marginBottom: 32 }}>For legal, partnership, or general inquiries.</p>
 
-                <form onSubmit={handleSubmit}>
-                  <div className="form-group">
-                    <label className="form-label">Department</label>
-                    <select className="form-select">
-                      <option>General Inquiry</option>
-                      <option>Compliance & Legal</option>
-                      <option>Partnerships</option>
-                    </select>
-                  </div>
-                  <div className="form-group">
-                    <label className="form-label">Name</label>
-                    <input type="text" className="form-input" required placeholder="John Doe" />
-                  </div>
-                  <div className="form-group">
-                    <label className="form-label">Email</label>
-                    <input type="email" className="form-input" required placeholder="john@company.com" />
-                  </div>
-                  <div className="form-group">
-                    <label className="form-label">Message</label>
-                    <textarea className="form-textarea" required placeholder="How can we help?" style={{ minHeight: 120, resize: 'vertical' }}></textarea>
-                  </div>
-                  <button type="submit" className="btn btn-primary btn-full">Send Message</button>
-                </form>
+          //       <form onSubmit={handleSubmit}>
+          //         <div className="form-group">
+          //           <label className="form-label">Department</label>
+          //           <select className="form-select">
+          //             <option>General Inquiry</option>
+          //             <option>Compliance & Legal</option>
+          //             <option>Partnerships</option>
+          //           </select>
+          //         </div>
+          //         <div className="form-group">
+          //           <label className="form-label">Name</label>
+          //           <input type="text" className="form-input" required placeholder="John Doe" />
+          //         </div>
+          //         <div className="form-group">
+          //           <label className="form-label">Email</label>
+          //           <input type="email" className="form-input" required placeholder="john@company.com" />
+          //         </div>
+          //         <div className="form-group">
+          //           <label className="form-label">Message</label>
+          //           <textarea className="form-textarea" required placeholder="How can we help?" style={{ minHeight: 120, resize: 'vertical' }}></textarea>
+          //         </div>
+          //         <button type="submit" className="btn btn-primary btn-full">Send Message</button>
+          //       </form>
 
-                <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid #eee' }}>
-                    <p style={{ fontSize: 13, color: '#666', lineHeight: 1.6 }}>
-                        <strong>Registered Office:</strong><br/>
-                        Nayaha India Techno Pvt Ltd,<br/>
-                        Bangalore, Karnataka, India - 560XXX
-                    </p>
-                </div>
-              </div>
-            </div>
-          </section>
+          //       <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid #eee' }}>
+          //           <p style={{ fontSize: 13, color: '#666', lineHeight: 1.6 }}>
+          //               <strong>Registered Office:</strong><br/>
+          //               Nayaha India Techno Pvt Ltd,<br/>
+          //               Bangalore, Karnataka, India - 560XXX
+          //           </p>
+          //       </div>
+          //     </div>
+          //   </div>
+          // </section>
+          <section className="corporate-wrapper  ">
+  <div className="corporate-card">
+    <span className="accent">GET IN TOUCH</span>
+
+    <h1 className="heading">Corporate Contact</h1>
+
+    <p className="subheading">
+      For legal, compliance, or general inquiries, please reach out to the specific
+      departments below.
+    </p>
+
+    <div className="cards">
+      <div className="info-card">
+        <h3>General Inquiries &amp; Admin</h3>
+        <p className="email">admin@nayaha.com</p>
+        <p className="text">
+          For general correspondence and corporate information.
+        </p>
+      </div>
+
+      <div className="info-card">
+        <h3>Compliance &amp; Legal</h3>
+        <p className="email">compliance@nayaha.com</p>
+        <p className="text">
+          For regulatory matters, DLT, and grievance redressal.
+        </p>
+      </div>
+    </div>
+
+    <div className="divider" />
+
+    <div className="office">
+      <strong>Registered Office:</strong>
+      <p>
+        Nayaha India Techno Pvt Ltd,<br />
+        03, Textile Clerk Colony, Near Readymade Complex,<br />
+        INDORE (M.P.) – (As per MCA Records)
+      </p>
+
+      <p className="note">
+        Note: We do not accept unsolicited marketing proposals or walk-ins without
+        prior appointment.
+      </p>
+    </div>
+  </div>
+</section>
+
         )}
       </main>
 
@@ -628,7 +787,8 @@ const NayahaCorporate = () => {
           <div className="footer-grid">
             <div className="footer-col">
               <span className="logo" style={{fontSize: 24, fontWeight: 700, marginBottom: 16, display:'block'}}>NAYAHA<span>.</span></span>
-              <p style={{ color: '#888', lineHeight: 1.6, maxWidth: 300 }}>Building the trust-based infrastructure for the next generation of Indian digital brands.</p>
+              <p style={{ color: '#888', lineHeight: 1.6, maxWidth: 300 }}>Incorporated under Companies Act, 2013.
+Registered in Indore, Madhya Pradesh, India.</p>
             </div>
             <div className="footer-col">
               <h4 style={{ color: 'var(--accent-gold)', fontSize: 12, textTransform: 'uppercase', marginBottom: 20, letterSpacing: 1 }}>Brands</h4>
@@ -648,7 +808,7 @@ const NayahaCorporate = () => {
           </div>
           <div style={{ borderTop: '1px solid #333', paddingTop: 30, color: '#666', fontSize: 12, display: 'flex', justifyContent: 'space-between' }}>
             <span>&copy; 2026 Nayaha India Techno Pvt Ltd.</span>
-            <span>CIN: U72900KA202XPTCXXXXXX</span>
+            <span>CIN: Companies Act, 2013</span>
           </div>
         </div>
       </footer>
