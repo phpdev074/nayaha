@@ -33,7 +33,14 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  
 }
+.corporate-Overview{
+    margin-left: -473px;
+}
+  /* margin-left: -719px;} */
+
+
 
 button {
   border-radius: 8px;
