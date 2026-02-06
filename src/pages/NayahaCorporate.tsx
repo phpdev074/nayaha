@@ -479,7 +479,7 @@ footer {
 }
 
 .Governance-Leadership{
-margin-left :-1000px
+margin-left :-700px
 }
 
 
